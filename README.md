@@ -24,7 +24,7 @@ This repository contains the official implementation for **Future Slot Predictio
 
 1. **Clone the repository:**
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/PCASOlab/Xslot
    cd Xslot
    ```
 
@@ -64,10 +64,10 @@ Supported datasets include Cholec80, Thoracic, MICCAI, Endovis, and more. Datase
 If you use this codebase, please cite:
 
 ```
-@inproceedings{your-paper,
+@inproceedings{liao_future2025,
   title={Future Slot Prediction for Unsupervised Object Discovery in Surgical Video},
-  author={...},
-  booktitle={...},
+  author={Guiqiu Liao, Matjaz Jogan, Marcel Hussing, Edward Zhang, Eric Eaton, Daniel A. Hashimoto},
+  booktitle={Medical Image Computing and Computer Assisted Intervention – MICCAI 2025},
   year={2025}
 }
 ```
