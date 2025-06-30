@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+    
+    
+        
+    
+
+        {   
+
+            "name": "Python Debugger: Module",
+            "type": "debugpy",
+            "request": "launch",
+            // "module": "data_pre_curation.data_thoracic_convect_all"
+            // "module": "data_pre_curation.data_thoracic_convect_all"
+
+            // "module": "data_pre_curation.data_ytobj_box_test2",
+            // "python": "/home/guiqiu/GQ_project/env_GQ/bin/python", // specify your virtual 
+            // "module": "main.main_TC_dino2"
+            // "module": "main.main_slot_set_class"
+            // "module": "main.main_slot_att_chora_MLP",
+            // "module": "main.train2_slot_diffusion",
+            // "module": "main.main_slot_att_chora_dinosau",
+            // "module": "main.main_slot_att_chora_video_sau",
+            // "module": "main.main_slot_att_chora_MLP_bert",
+            // "module": "main.main_slot_att_chora_MLP_bert_xstate",
+            // "module": "main.main_slot_att_chora_MLP_bert_xstate",
+            // "module": "main.sbert.Mixer9s",
+            // "module": "main.sbert.MLP_ds2",
+            // "module": "main.sbert.MLP_ds_simmerger_FL_nw",
+            // "module": "main.sbert.MLP_ds_simmerger_predict",
+            // "module": "main.sbert.MLP_ds_simmerger_predict_thr_08",
+            "module": "main.sbert.MLP_ds_simmerger_predict",
+
+
+            // "module": "main.sbert.MLP_ds_simmerger",
+
+
+
+            // "module": "main.sbert.Mixer_ds",
+
+            // "pythonPath": "/home/guiqiu/GQ_env/bin/python"
+        }
+    ]
+}
