@@ -9,12 +9,12 @@ import os
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai+cholec'  # Change this to your target mode
 
 
-os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
+# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_endovis'  # Change this to your target mode
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_miccai'  # Change this to your target mode
 #
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_cholec'  # Change this to your target mode
-# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
+os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_thoracic'  # Change this to your target mode
 
 
@@ -202,14 +202,14 @@ else:
     #     torch.save(Model_infer.model.encoder.state_dict(), Output_root + "encoder" + str(saver_id) + ".pth")
     #     torch.save(Model_infer.model.processor.state_dict(), Output_root + "processor" + str(saver_id) + ".pth")
     #     torch.save(Model_infer.model.decoder.state_dict(), Output_root + "decoder" + str(saver_id) + ".pth")
-    # Model_infer.model.load_state_dict(torch.load(Output_root + 'model' + loadmodel_index ))
+    Model_infer.model.load_state_dict(torch.load(Output_root + 'model' + loadmodel_index ))
     
-    Model_infer.model.initializer.load_state_dict(torch.load(Output_root + 'initializer' + loadmodel_index,map_location='cuda:0'))
-    Model_infer.model.encoder.load_state_dict(torch.load(Output_root + 'encoder' + loadmodel_index,map_location='cuda:0' ))
-    Model_infer.model.processor.load_state_dict(torch.load(Output_root + 'processor' + loadmodel_index,map_location='cuda:0' ))
-    Model_infer.model.decoder.load_state_dict(torch.load(Output_root + 'decoder' + loadmodel_index,map_location='cuda:0' ))
-    Model_infer.model.temporal_binder.load_state_dict(torch.load(Output_root + 'temporal_binder' + loadmodel_index,map_location='cuda:0' ))
-    Model_infer.model.future_state_prdt.load_state_dict(torch.load(Output_root + 'future_state_prdt' + loadmodel_index,map_location='cuda:0' ))
+    # Model_infer.model.initializer.load_state_dict(torch.load(Output_root + 'initializer' + loadmodel_index,map_location='cuda:0'))
+    # Model_infer.model.encoder.load_state_dict(torch.load(Output_root + 'encoder' + loadmodel_index,map_location='cuda:0' ))
+    # Model_infer.model.processor.load_state_dict(torch.load(Output_root + 'processor' + loadmodel_index,map_location='cuda:0' ))
+    # Model_infer.model.decoder.load_state_dict(torch.load(Output_root + 'decoder' + loadmodel_index,map_location='cuda:0' ))
+    # Model_infer.model.temporal_binder.load_state_dict(torch.load(Output_root + 'temporal_binder' + loadmodel_index,map_location='cuda:0' ))
+    # Model_infer.model.future_state_prdt.load_state_dict(torch.load(Output_root + 'future_state_prdt' + loadmodel_index,map_location='cuda:0' ))
 
         # torch.save(Model_infer.model.temporal_binder.state_dict(), Output_root + "temporal_binder" + str(saver_id) + ".pth")
 
@@ -298,13 +298,15 @@ while (1):
                 print(" loss_SS" + str (Model_infer.lossDisplay_s.cpu().detach().numpy()) )
 
     if (read_id % 1000) == 0  :
-        # torch.save(Model_infer.model.state_dict(), Output_root + "model" + str(saver_id) + ".pth")
-        torch.save(Model_infer.model.initializer.state_dict(), Output_root + "initializer" + str(saver_id) + ".pth")
-        torch.save(Model_infer.model.encoder.state_dict(), Output_root + "encoder" + str(saver_id) + ".pth")
-        torch.save(Model_infer.model.processor.state_dict(), Output_root + "processor" + str(saver_id) + ".pth")
-        torch.save(Model_infer.model.decoder.state_dict(), Output_root + "decoder" + str(saver_id) + ".pth")
-        torch.save(Model_infer.model.temporal_binder.state_dict(), Output_root + "temporal_binder" + str(saver_id) + ".pth")
-        torch.save(Model_infer.model.future_state_prdt.state_dict(), Output_root + "future_state_prdt" + str(saver_id) + ".pth")
+        torch.save(Model_infer.model.state_dict(), Output_root + "model" + str(saver_id) + ".pth")
+        # torch.save(Model_infer.model.initializer.state_dict(), Output_root + "initializer" + str(saver_id) + ".pth")
+        # torch.save(Model_infer.model.encoder.state_dict(), Output_root + "encoder" + str(saver_id) + ".pth")
+        # torch.save(Model_infer.model.processor.state_dict(), Output_root + "processor" + str(saver_id) + ".pth")
+        # torch.save(Model_infer.model.decoder.state_dict(), Output_root + "decoder" + str(saver_id) + ".pth")
+        # torch.save(Model_infer.model.temporal_binder.state_dict(), Output_root + "temporal_binder" + str(saver_id) + ".pth")
+        # torch.save(Model_infer.model.future_state_prdt.state_dict(), Output_root + "future_state_prdt" + str(saver_id) + ".pth")
+
+         
 
 
 

@@ -149,7 +149,7 @@ Display_images= False
 Display_visdom_figure=True
 Display_embedding = False
 Save_flag =False
-loadmodel_index = '1.pth'
+loadmodel_index = '0.pth'
 
 Random_mask_temporal_feature = False
 Random_mask_patch_feature = False
