@@ -1,1 +1,1 @@
-# Surgical_weakly_supervised
+# Official repo for "Future slot prediction for unsupervised object discovery in surgical Video"
