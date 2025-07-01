@@ -63,9 +63,9 @@ A slot decoder then recurrently maps each merged slot back to the video encoding
 ## Usage
 
 - **Training and Evaluation:**  
-  Edit `working_dir_root.py` to set the desired mode and dataset. Run the main script:
+   
   ```bash
-  python MLP_ds_simmerger_predict.py
+  python main.py
   ```
 - **Visualization:**  
   Visual outputs are available via Visdom at [http://localhost:8097](http://localhost:8097).
