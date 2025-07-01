@@ -73,6 +73,7 @@ A slot decoder then recurrently maps each merged slot back to the video encoding
 - **Configuration:**  
   Modify files in `working_para/` to set paths, dataset splits, and experiment parameters.
 
+
 ## Pretrained Models
 Download the following model and place them within the [`Model_checkpoint`](./Model_checkpoint) folder
 - **Thoracic model:** [Download](https://upenn.box.com/s/secy6f7j0q1u50ccejxf6pu5w8kf3o7y)
@@ -89,6 +90,28 @@ Support these 3 dataset, the demo is able to train with sampled data (within fol
 
 
 
+### Example: Main Training Loop using main.py
+
+```python
+# Set checkpoint directory and training data
+CHECKPOINT_SUBDIR = "./Model_checkpoint/Abdominal/"
+os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
+
+
+# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_cholec'  # Change this to your target mode
+# CHECKPOINT_SUBDIR = "./Model_checkpoint/Cholec/"
+
+# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
+# CHECKPOINT_SUBDIR = "./Model_checkpoint/Thoracic/"
+
+# Model and dataloader initialization
+Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(), GPU_mode, num_gpus, ...)
+device = Model_infer.device
+dataLoader = myDataloader(img_size=img_size, ...)
+
+if Continue_flag:
+    Model_infer.model.load_state_dict(torch.load(CHECKPOINT_SUBDIR + 'model' + loadmodel_index))
+```
 <p align="center">
   <img src="asset/Video2.gif" width="600" />
 </p>
