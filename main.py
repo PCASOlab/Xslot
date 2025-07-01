@@ -6,23 +6,21 @@ from torch.autograd import Variable
 from time import time
 import os
  
-
-# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
  
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_miccai'  # Change this to your target mode
 #
  
 
 
-# CHECKPOINT_SUBDIR = "../Model_checkpoint/Abdominal/"
-# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
+CHECKPOINT_SUBDIR = "./Model_checkpoint/Abdominal/"
+os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
 
 
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_cholec'  # Change this to your target mode
-# CHECKPOINT_SUBDIR = "../Model_checkpoint/Cholec/"
+# CHECKPOINT_SUBDIR = "./Model_checkpoint/Cholec/"
 
-os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
-CHECKPOINT_SUBDIR = "../Model_checkpoint/Thoracic/"
+# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
+# CHECKPOINT_SUBDIR = "./Model_checkpoint/Thoracic/"
 
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_cholec'  # Change this to your target mode
 
