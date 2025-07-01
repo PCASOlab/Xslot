@@ -3,7 +3,7 @@
 
 
 <p align="center">
-  <img src="asset/Video1.gif" width="400" />
+  <img src="asset/Video1.gif" width="800" />
 </p>
 
 ![Method Overview](asset/method.jpg)
@@ -78,7 +78,7 @@ This repository contains the official implementation for **Future Slot Predictio
 
 
 <p align="center">
-  <img src="asset/Video2.gif" width="400" />
+  <img src="asset/Video2.gif" width="600" />
 </p>
 ## Citation
 
