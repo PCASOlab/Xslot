@@ -82,7 +82,6 @@ Download the following model and place them within the [`Model_checkpoint`](./Mo
 
 ## Datasets
 
-
 Support these 3 dataset, the demo is able to train with sampled data (within folder [`Data_samples`](./Data_samples)), the full data is available thourgh the following links:
 - **Abdominal dataset:** [Download](https://upenn.box.com/s/493licnenrssjukuvok5zkvc5cqmx1nh)
 - **Cholec dataset:** [Download](https://upenn.box.com/s/ree79lv9fbibjbs2b8mkwzz207oqu6jj)
@@ -94,19 +93,24 @@ Support these 3 dataset, the demo is able to train with sampled data (within fol
 
 ```python
 # Set checkpoint directory and training data
+
+# MICCAI Abdominal model
 CHECKPOINT_SUBDIR = "./Model_checkpoint/Abdominal/"
 os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
 
-
+# Cholec model and data
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_cholec'  # Change this to your target mode
 # CHECKPOINT_SUBDIR = "./Model_checkpoint/Cholec/"
 
+#Thoracic model and data
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
 # CHECKPOINT_SUBDIR = "./Model_checkpoint/Thoracic/"
 ```
 
-```python
+
 # Model and dataloader initialization
+```python
+
 Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(), GPU_mode, num_gpus, ...)
 device = Model_infer.device
 dataLoader = myDataloader(img_size=img_size, ...)
