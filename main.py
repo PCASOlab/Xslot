@@ -125,7 +125,17 @@ else:
 # dataroot = "../dataset/CostMatrix/"
 # torch.set_num_threads(8)
  # create the model
-
+def xslot_slot_att(pretrained=True, checkpoint_url=None, **kwargs):
+    model = model_infer_slot_att._Model_infer(..., **kwargs)  # fill args accordingly
+    if pretrained:
+        assert checkpoint_url, "Please provide checkpoint_url"
+        state_dict = torch.hub.load_state_dict_from_url(
+            checkpoint_url,
+            progress=True,
+            map_location="cpu"
+        )
+        model.model.load_state_dict(state_dict)
+    return model
 if Visdom_flag == True:
     from visual import VisdomLinePlotter
 
@@ -140,7 +150,7 @@ dataLoader = myDataloader(img_size = img_size,Display_loading_video = False,Read
 
 if Continue_flag == True:
     Model_infer.model.load_state_dict(torch.load(Output_root + 'model' + loadmodel_index ))
-  
+   
 
 
 

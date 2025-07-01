@@ -1,0 +1,2 @@
+# Ignore all files in any subfolder of model_checkpoint
+/model_checkpoint
