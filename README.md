@@ -6,7 +6,6 @@
   <img src="asset/Video1.gif" width="800" />
 </p>
 
-![Method Overview](asset/method.jpg)
 
 This repository contains the official implementation for **Future Slot Prediction for Unsupervised Object Discovery in Surgical Video**. The project focuses on unsupervised object-centric learning and future slot prediction in surgical video datasets, leveraging deep learning and temporal feature modeling.
 
@@ -16,6 +15,17 @@ This repository contains the official implementation for **Future Slot Predictio
 - **Slot Attention & Prediction:** Utilizes slot-based neural architectures for object-centric representation and future state prediction.
 - **Dataset Handling:** Supports multiple surgical datasets (Cholec, Thoracic, MICCAI, Endovis, etc.) with flexible configuration.
 - **Evaluation & Visualization:** Includes tools for evaluation metrics (e.g., Hausdorff, Jaccard) and visualization using Visdom.
+
+![Method Overview](asset/method.jpg)
+
+
+## Method Overview
+
+The figure above illustrates our approach. The model processes videos of arbitrary length and iteratively operates on a buffered latent embedding of length T, which is also the length of the attention window. A sequence of frames is encoded to obtain features. Through a recurrent iterative attention step, we obtain a set of slot representations, where each slot is a latent vector that embeds objectness for a given frame. 
+
+These slots are then passed to a transformer encoder and a merger module that aggregates information between slots, allocates redundant slots to new objects entering the scene, removes slots for objects that exit, and merges multiple slots corresponding to different parts of the same object. 
+
+A slot decoder then recurrently maps each merged slot back to the video encoding space, reconstructing the features. Simultaneously, object segmentation masks for each slot are reconstructed. The objective is to minimize the reconstruction loss between the original and reconstructed features and masks.
 
 ## Repository Structure
 
@@ -80,6 +90,11 @@ This repository contains the official implementation for **Future Slot Predictio
 <p align="center">
   <img src="asset/Video2.gif" width="600" />
 </p>
+
+## Acknoledgement 
+We thank the authors of VideoSaur, DINOSaur, AdaSlot SAVi, STEVE, Slot-Diffusion for open source their code.
+
+
 ## Citation
 
 If you use this codebase, please cite:
@@ -96,3 +111,4 @@ If you use this codebase, please cite:
 ## License
 
 This project is for academic research purposes only.
+
