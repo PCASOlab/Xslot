@@ -1,4 +1,4 @@
-# Implementation of Future/neXt Slot (Xslot) Prediction for Unsupervised Object Discovery in Surgical Video - MICCAI2025
+# Implementation of "Future/neXt Slot (Xslot) Prediction for Unsupervised Object Discovery in Surgical Video" - MICCAI2025
 
 
 
@@ -20,9 +20,9 @@ This repository contains the official implementation for **Future Slot Predictio
 
 ## Method Overview
 
-The figure above illustrates our approach. The model processes videos of arbitrary length and iteratively operates on a buffered latent embedding of length T, which is also the length of the attention window. A sequence of frames is encoded to obtain features. Through a recurrent iterative attention step, we obtain a set of slot representations, where each slot is a latent vector that embeds objectness for a given frame. 
+The figure below illustrates our approach. The model processes videos of arbitrary length and iteratively operates on a buffered latent embedding of length T, which is also the length of the attention window. A sequence of frames is encoded to obtain features. Through a recurrent iterative attention step, we obtain a set of slot representations, where each slot is a latent vector that embeds objectness for a given frame. 
 
-These slots are then passed to a transformer encoder and a merger module that aggregates information between slots, allocates redundant slots to new objects entering the scene, removes slots for objects that exit, and merges multiple slots corresponding to different parts of the same object. 
+These slots are then passed to a transformer encoder and a merger module that aggregates information between slots, allocates redundant slots to new objects entering the scene, removes slots for objects that exit, and merges multiple slots corresponding to different parts of the same object. Unlike convential methods (I) and (II) that ultilize simple slot initialization, our method also ultilize our DTST and slot merger modules for initialization.
 
 A slot decoder then recurrently maps each merged slot back to the video encoding space, reconstructing the features. Simultaneously, object segmentation masks for each slot are reconstructed. The objective is to minimize the reconstruction loss between the original and reconstructed features and masks.
 ![Method Overview](asset/method.jpg)
