@@ -148,9 +148,10 @@ We thank the authors of the following projects for open-sourcing their code:
 
 - [VideoSAUR](https://github.com/martius-lab/videosaur)
 - [DINOSAUR](https://github.com/facebookresearch/dinosaure)
-- [AdaSlot SAVi](https://github.com/google-research/slot-attention-video)
+- [ SAVi](https://github.com/google-research/slot-attention-video)
 - [STEVE](https://github.com/google-research/steve)
 - [Slot-Diffusion](https://github.com/thu-ml/SlotDiffusion)
+- [AdaSlot](https://github.com/amazon-science/AdaSlot)
 
 ## Citation
 
