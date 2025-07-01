@@ -1,5 +1,12 @@
 # Future Slot Prediction for Unsupervised Object Discovery in Surgical Video
 
+<p align="center">
+  <video src="asset/Video%201%2029%20seconds.mp4" width="400" autoplay loop muted playsinline></video>
+  <video src="asset/Video%202%20Multiple%20FPS.mp4" width="400" autoplay loop muted playsinline></video>
+</p>
+
+![Method Overview](assets/method.jpg)
+
 This repository contains the official implementation for **Future Slot Prediction for Unsupervised Object Discovery in Surgical Video**. The project focuses on unsupervised object-centric learning and future slot prediction in surgical video datasets, leveraging deep learning and temporal feature modeling.
 
 ## Features
