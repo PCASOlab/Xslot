@@ -22,7 +22,7 @@ from working_dir_root import Evaluation_slots
 from dataset import io
 from working_dir_root import selected_data, Visdom_flag
 import eval
-import eval_box
+# import eval_box
 import eval_slots
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -293,10 +293,10 @@ class Display(object):
             # cv2.imshow( 'overlay', stitch_over.astype((np.uint8)))
 
             cv2.waitKey(1)
-        if Save_flag == True:
+        # if Save_flag == True:
 
-            io.save_img_to_folder(Output_root + "image/predict/" ,  read_id, stitch_over.astype((np.uint8)) )
-            io.save_img_to_folder(Output_root + "image/predict_overlay/" ,  read_id, image_all.astype((np.uint8)) )
+        #     io.save_img_to_folder(Output_root + "image/predict/" ,  read_id, stitch_over.astype((np.uint8)) )
+        #     io.save_img_to_folder(Output_root + "image/predict_overlay/" ,  read_id, image_all.astype((np.uint8)) )
         if Display_visdom_figure:
 
             stitch_over =  cv2.cvtColor(stitch_over, cv2.COLOR_RGB2BGR)
