@@ -108,16 +108,32 @@ os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your ta
 ```
 
 
-# Model and dataloader initialization
+### Model and dataloader initialization
 ```python
 
-Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(), GPU_mode, num_gpus, ...)
+# Chnage the default setting of model
+Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(),GPU_mode,num_gpus,Using_contrast=False,Using_SP_regu = False,Using_SP = True,Using_slot_bert=True,slot_ini= "binder+merger",Sim_threshold=0.90,gpu_selection=Gpu_selection,pooling="max",TPC=True)
+
 device = Model_infer.device
 dataLoader = myDataloader(img_size=img_size, ...)
 
 if Continue_flag:
     Model_infer.model.load_state_dict(torch.load(CHECKPOINT_SUBDIR + 'model' + loadmodel_index))
 ```
+
+
+### Run and Obtain Output
+
+To run inference and generate results, execute:
+
+```bash
+python main.py
+```
+
+The predicted frame mask stacks will be saved in the [`Data_samples/output/`](./Data_samples/output/) directory.
+
+
+
 <p align="center">
   <img src="asset/Video2.gif" width="600" />
 </p>
