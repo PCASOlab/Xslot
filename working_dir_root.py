@@ -24,39 +24,4 @@ if Machine_ID == 3:
     elif import_mode == 'eval_thoracic':
         # from working_para.working_dir_root_eval_Thoracic_p3 import *
         from working_para.working_dir_root_eval_Thoracic_p3 import *
-
-    elif import_mode == 'eval_miccai':
-        # from working_para.working_dir_root_eval_miccai_p3 import *
-        from working_para.working_dir_root_eval_miccai_p3 import *
-    elif import_mode == 'train_miccai+thoracic':
-        # from working_para.working_dir_root_eval_miccai_p3 import *
-        from working_para.working_dir_root_train_miccai_thoracic_p3 import *
-    elif import_mode == 'train_miccai+cholec':
-        # from working_para.working_dir_root_eval_miccai_p3 import *
-        from working_para.working_dir_root_train_miccai_cholec_p3 import *
-elif Machine_ID == 1:
-    # Dynamically import based on the mode
-    if import_mode == 'train_cholec':
-        from working_para.working_dir_root_train_cholec import *
-    elif import_mode == 'eval_cholec':
-        from working_para.working_dir_root_eval_cholec import *
-    elif import_mode == 'train_miccai':
-        from working_para.working_dir_root_train_miccai_p1 import *
-    elif import_mode == 'train_thoracic':
-        from working_para.working_dir_root_train_Thoracic_p1 import *
-    elif import_mode == 'eval_thoracic':
-        # from working_para.working_dir_root_eval_Thoracic_p3 import *
-        from working_para.working_dir_root_eval_Thoracic_p1 import *
-    elif import_mode == 'eval_endovis':
-        # from working_para.working_dir_root_eval_Thoracic_p3 import *
-        from working_para.working_dir_root_eval_endovis_p1 import *
-
-    elif import_mode == 'eval_miccai':
-        # from working_para.working_dir_root_eval_miccai_p3 import *
-        from working_para.working_dir_root_eval_miccai_p1 import *
-    elif import_mode == 'train_mix':
-        # from working_para.working_dir_root_eval_miccai_p3 import *
-        from working_para.working_dir_root_eval_miccai_p1 import *
-    elif import_mode == 'train_miccai+cholec':
-        # from working_para.working_dir_root_eval_miccai_p3 import *
-        from working_para.working_dir_root_train_miccai_cholec_p1 import *
+ 

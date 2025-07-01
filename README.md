@@ -16,7 +16,6 @@ This repository contains the official implementation for **Future Slot Predictio
 - **Dataset Handling:** Supports multiple surgical datasets (Cholec, Thoracic, MICCAI, Endovis, etc.) with flexible configuration.
 - **Evaluation & Visualization:** Includes tools for evaluation metrics (e.g., Hausdorff, Jaccard) and visualization using Visdom.
 
-![Method Overview](asset/method.jpg)
 
 
 ## Method Overview
@@ -26,6 +25,7 @@ The figure above illustrates our approach. The model processes videos of arbitra
 These slots are then passed to a transformer encoder and a merger module that aggregates information between slots, allocates redundant slots to new objects entering the scene, removes slots for objects that exit, and merges multiple slots corresponding to different parts of the same object. 
 
 A slot decoder then recurrently maps each merged slot back to the video encoding space, reconstructing the features. Simultaneously, object segmentation masks for each slot are reconstructed. The objective is to minimize the reconstruction loss between the original and reconstructed features and masks.
+![Method Overview](asset/method.jpg)
 
 ## Repository Structure
 
