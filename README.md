@@ -1,4 +1,4 @@
-# Future Slot Prediction for Unsupervised Object Discovery in Surgical Video
+# Implementation of Future/neXt Slot (Xslot) Prediction for Unsupervised Object Discovery in Surgical Video
 
 
 
