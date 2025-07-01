@@ -3,7 +3,7 @@
 
 
 <p align="center">
-  <video src="asset/Video 1 29 seconds.mp4" width="400" autoplay loop muted playsinline></video>
+  <!-- <video src="asset/Video 1 29 seconds.mp4" width="400" autoplay loop muted playsinline></video> -->
   <video src="asset/Video 2 Multiple FPS.mp4" width="400" autoplay loop muted playsinline></video>
 </p>
 
