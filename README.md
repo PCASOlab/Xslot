@@ -89,7 +89,7 @@ Support these 3 dataset, the demo is able to train with sampled data (within fol
 
 
 
-### Example: Main Training Loop using main.py
+### Main Training Loop using main.py
 
 ```python
 # Set checkpoint directory and training data
@@ -108,7 +108,7 @@ os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your ta
 ```
 
 
-### Model and dataloader initialization
+### Model and dataloader configuration
 ```python
 
 # Chnage the default setting of model
@@ -132,7 +132,11 @@ python main.py
 
 The predicted frame mask stacks will be saved in the [`Data_samples/output/`](./Data_samples/output/) directory.
 
+## Video stream scene decomposation
+ 
+Our method is able to optimially decompose the scene with fast inference, preventing over- or under- grouping of object or tissue. It is demonstrated that it is also able to handle videos with  different FPS after it is trained 1 FPS. Note that the forward time per frame on a single NVIDIA RTX A6000 GPU is 5.6 ms, supporting real-time downstream tasks. While slot merging and future slot prediction add 3.9 ms overhead compared to Slot-BERT (1.7 ms), this remains minor. Even with a 20X larger context window, latency stays under 100 ms thanks to latent-space temporal reasoning.
 
+![Scene decompose](asset/segmentation.jpg)
 
 <p align="center">
   <img src="asset/Video2.gif" width="600" />
