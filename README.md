@@ -4,7 +4,6 @@
 
 <p align="center">
   <img src="asset/Video1.gif" width="400" />
-  <img src="asset/Video2.gif" width="400" />
 </p>
 
 ![Method Overview](asset/method.jpg)
@@ -76,6 +75,11 @@ This repository contains the official implementation for **Future Slot Predictio
 - **Cholec dataset:** [Download](https://upenn.box.com/s/ree79lv9fbibjbs2b8mkwzz207oqu6jj)
 - **Thoracic dataset:** [Download](https://upenn.box.com/s/rxqoi81j5ar4l343ob6otdxxeusc3iwg)
 
+
+
+<p align="center">
+  <img src="asset/Video2.gif" width="400" />
+</p>
 ## Citation
 
 If you use this codebase, please cite:
