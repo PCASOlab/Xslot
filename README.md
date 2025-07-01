@@ -103,7 +103,9 @@ os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your ta
 
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
 # CHECKPOINT_SUBDIR = "./Model_checkpoint/Thoracic/"
+```
 
+```python
 # Model and dataloader initialization
 Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(), GPU_mode, num_gpus, ...)
 device = Model_infer.device

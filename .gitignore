@@ -1,5 +1,7 @@
 # Ignore all files in any subfolder of model_checkpoint
 Model_checkpoint/Abdominal/model0.pth
+Model_checkpoint/Abdominal/model1.pth
+
 Model_checkpoint/Cholec/model0.pth
 Model_checkpoint/Cholec/model1.pth
 
