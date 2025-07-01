@@ -101,13 +101,8 @@ class _Model_infer(object):
             val_metrics = None
 
         self.model = models.build(config.model, config.optimizer, train_metrics, val_metrics,Using_SP=self.Using_SP,Sim_threshold=Sim_threshold)
-        checkpoint = torch.load(video_saur_pretrain, map_location=torch.device('cpu'))
-        # self.model.load_state_dict(checkpoint['state_dict'])
-        dummy_input = torch.rand(4, 14, 3, 224, 224)
-        # Initialize the tensor with zeros
-
-        # Directly create the dictionary with the tensor
-        dummy_batch = {"video": dummy_input}
+       
+       
         optimizers = self.model .configure_optimizers()
         # If `configure_optimizers` returns a dictionary
         if isinstance(optimizers, dict):

@@ -17,7 +17,8 @@ working_root = "C:/2data/"
 if Linux_computer == True:
     working_root = "/home/guiqiu/GQ_project/weakly_supervised/Data/"
 
-working_pcaso_raid = "/data/"
+working_pcaso_raid = "Data_samples/"
+ 
 
 
 Dataset_video_root =  working_root + "training_data/video_clips/"
@@ -26,8 +27,7 @@ Dataset_video_pkl_merge_root  = working_root  + "training_data/video_clips_pkl_m
 Dataset_video_pkl_flow_root = working_root + "training_data/video_clips_pkl_flow/"
 Dataset_video_pkl_cholec = working_root + "training_data/video_clips_pkl_cholec/"
 Dataset_video_pkl_cholec = working_root + "cholec80/output_pkl/"
-Dataset_video_pkl_thoracic =  'C:/2data/Raw_data_Chrocic/data/' + 'output_pkl/'
-Dataset_video_pkl_endovis = "C:/2data/endovis/2017/pkl/"
+ 
 
 
 

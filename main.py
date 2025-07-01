@@ -8,14 +8,21 @@ import os
  
 
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
-# os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_endovis'  # Change this to your target mode
+ 
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_miccai'  # Change this to your target mode
 #
+ 
+
+
+# CHECKPOINT_SUBDIR = "../Model_checkpoint/Abdominal/"
+# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
+
+
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_cholec'  # Change this to your target mode
+# CHECKPOINT_SUBDIR = "../Model_checkpoint/Cholec/"
+
 os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_thoracic'  # Change this to your target mode
-# os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_thoracic'  # Change this to your target mode
-
-
+CHECKPOINT_SUBDIR = "../Model_checkpoint/Thoracic/"
 
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_cholec'  # Change this to your target mode
 
@@ -42,25 +49,18 @@ from working_dir_root import Enable_student,Batch_size,selected_data,Display_dow
 from dataset import io
 import pathlib
 import argparse
-
-# GPU_mode= True
-# Continue_flag = True
-# Visdom_flag = False
-# Display_flag = False
-# loadmodel_index = '3.pth'
+ 
 dataset_tag = "+".join(selected_data) if isinstance(selected_data, list) else selected_data
 Output_root = Output_root+ "0Merge_predict" + dataset_tag + str(Data_percentage) + "/"
 io.self_check_path_create(Output_root)
 RESULT_FINISHED = 0
 RESULT_TIMEOUT = 1
 
-CHECKPOINT_SUBDIR = "checkpoints"
+
+
 TENSORBOARD_SUBDIR = "tb"
 METRICS_SUBDIR = "metrics"
-
-# Define default configuration values
-# DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_dinov2.yml"
-# DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP.yml"
+ 
 DEFAULT_CONFIG = "model_config.yml"
 
 # DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_cholec.yml"
@@ -149,7 +149,7 @@ device = Model_infer.device
 dataLoader = myDataloader(img_size = img_size,Display_loading_video = False,Read_from_pkl= True,Save_pkl = False,Load_flow=Load_flow, Load_feature=Load_feature,Train_list='else',Device=device)
 
 if Continue_flag == True:
-    Model_infer.model.load_state_dict(torch.load(Output_root + 'model' + loadmodel_index ))
+    Model_infer.model.load_state_dict(torch.load(CHECKPOINT_SUBDIR + 'model' + loadmodel_index ))
    
 
 
@@ -232,7 +232,7 @@ while (1):
                 print(" loss_SS" + str (Model_infer.lossDisplay_s.cpu().detach().numpy()) )
 
     if (read_id % 1000) == 0  :
-        torch.save(Model_infer.model.state_dict(), Output_root + "model" + str(saver_id) + ".pth")
+        torch.save(Model_infer.model.state_dict(), CHECKPOINT_SUBDIR + "model" + str(saver_id) + ".pth")
          
 
         saver_id +=1

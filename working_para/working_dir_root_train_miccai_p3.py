@@ -17,9 +17,8 @@ working_root = "C:/2data/"
 if Linux_computer == True:
     working_root = "/home/guiqiu/GQ_project/weakly_supervised/Data/"
 
-# working_pcaso_raid = "/media/guiqiu/Weakly_supervised_data/"
-working_pcaso_raid = "/data/"
-
+working_pcaso_raid = "Data_samples/"
+ 
 
 
 Dataset_video_root =  working_root + "training_data/video_clips/"
@@ -28,10 +27,7 @@ Dataset_video_pkl_merge_root  = working_root  + "training_data/video_clips_pkl_m
 Dataset_video_pkl_flow_root = working_root + "training_data/video_clips_pkl_flow/"
 Dataset_video_pkl_cholec = working_root + "training_data/video_clips_pkl_cholec/"
 Dataset_video_pkl_cholec = working_root + "cholec80/output_pkl/"
-Dataset_video_pkl_thoracic =  'C:/2data/Raw_data_Chrocic/data/' + 'output_pkl/'
-Dataset_video_pkl_endovis = "C:/2data/endovis/2017/pkl/"
-
-
+ 
 if Linux_computer == True:
     # Dataset_video_pkl_cholec = working_pcaso_raid + "cholec80/output_pkl/"
     Dataset_video_pkl_cholec = working_pcaso_raid + "cholec80/output_pkl_croped/"
@@ -148,13 +144,13 @@ Display_final_SAM = False
 Display_images= False
 Display_visdom_figure=True
 Display_embedding = False
-Save_flag =False
+Save_flag =True
 loadmodel_index = '0.pth'
 
 Random_mask_temporal_feature = False
 Random_mask_patch_feature = False
 
-Batch_size =4
+Batch_size =1 # demo batch
 Video_len = 5
 Video_down_sample_f = 1
 Data_aug = True
