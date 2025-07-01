@@ -76,9 +76,10 @@ A slot decoder then recurrently maps each merged slot back to the video encoding
 
 ### Pretrained Models
 Download the following model and place them within the [`Model_checkpoint`](./Model_checkpoint) folder
+- **Abdominal model:** [Download](https://upenn.box.com/s/z3zihy27b6vufkkncmezj1aul5jh86k1)
 - **Thoracic model:** [Download](https://upenn.box.com/s/secy6f7j0q1u50ccejxf6pu5w8kf3o7y)
 - **Cholec model:** [Download](https://upenn.box.com/s/q8pt5ge89lhmxj7odift29vscqzwivys)
-- **Abdominal model:** [Download](https://upenn.box.com/s/z3zihy27b6vufkkncmezj1aul5jh86k1)
+
 
 ### Datasets
 
