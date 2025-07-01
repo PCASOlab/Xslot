@@ -14,7 +14,7 @@ This repository contains the official implementation for **Future Slot Predictio
 - **Unsupervised Object Discovery:** Identify and track objects in surgical videos without manual annotations.
 - **Slot Attention & Prediction:** Utilizes slot-based neural architectures for object-centric representation and future state prediction.
 - **Dataset Handling:** Supports multiple surgical datasets (Cholec, Thoracic, MICCAI, Endovis, etc.) with flexible configuration.
-- **Evaluation & Visualization:** Includes tools for evaluation metrics (e.g., Hausdorff, Jaccard) and visualization using Visdom.
+- **Load model and play & Visualization:** Includes tools for visualization, directly load pre-trained model for unsupervised transfer-learning.
 
 
 
