@@ -61,7 +61,7 @@ METRICS_SUBDIR = "metrics"
 # Define default configuration values
 # DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_dinov2.yml"
 # DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP.yml"
-DEFAULT_CONFIG = "ytvis3_MLP_ds_simmerger.yml"
+DEFAULT_CONFIG = "model_config.yml"
 
 # DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_cholec.yml"
 
