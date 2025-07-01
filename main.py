@@ -36,7 +36,6 @@ from dataset.dataset import myDataloader
 from display import Display
 import torch.nn.parallel
 import torch.distributed as dist
-import scheduler
 from working_dir_root import GPU_mode ,Continue_flag ,Visdom_flag ,Display_flag ,loadmodel_index  ,img_size,Load_flow,Load_feature
 from working_dir_root import Max_lr, learningR,learningR_res,Save_feature_OLG,sam_feature_OLG_dir, Evaluation,Save_sam_mask,output_folder_sam_masks
 from working_dir_root import Enable_student,Batch_size,selected_data,Display_down_sample, Data_percentage,Gpu_selection,Evaluation_slots,Max_epoch
@@ -62,7 +61,7 @@ METRICS_SUBDIR = "metrics"
 # Define default configuration values
 # DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_dinov2.yml"
 # DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP.yml"
-DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_ds_simmerger.yml"
+DEFAULT_CONFIG = "ytvis3_MLP_ds_simmerger.yml"
 
 # DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_cholec.yml"
 
@@ -174,9 +173,7 @@ while (1):
     Model_infer.forward(input_videos_GPU,input_flows_GPU,features,Enable_student,epoch=epoch)
     # Model_infer.forward(input_videos_GPU,input_flows_GPU,features,Enable_student)
 
-
-    lr=scheduler.cyclic_learning_rate(current_epoch=epoch,max_lr=Max_lr,min_lr=learningR,cycle_length=4)
-    print("learning rate is :" + str(lr))
+ 
     if Evaluation == False and Evaluation_slots==False:
         Model_infer.optimization(labels_GPU,Enable_student) 
 
