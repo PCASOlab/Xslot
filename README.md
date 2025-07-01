@@ -145,13 +145,7 @@ Our method is able to optimially decompose the scene with fast inference, preven
 
 ## Acknowledgement 
 We thank the authors of the following projects for open-sourcing their code:
-
-- [VideoSAUR](https://github.com/martius-lab/videosaur)
-- [DINOSAUR](https://github.com/facebookresearch/dinosaure)
-- [ SAVi](https://github.com/google-research/slot-attention-video)
-- [STEVE](https://github.com/google-research/steve)
-- [Slot-Diffusion](https://github.com/thu-ml/SlotDiffusion)
-- [AdaSlot](https://github.com/amazon-science/AdaSlot)
+ [VideoSAUR](https://github.com/martius-lab/videosaur); [DINOSAUR](https://github.com/facebookresearch/dinosaure); [ SAVi](https://github.com/google-research/slot-attention-video);[STEVE](https://github.com/google-research/steve); [Slot-Diffusion](https://github.com/thu-ml/SlotDiffusion);[AdaSlot](https://github.com/amazon-science/AdaSlot).
 
 ## Citation
 
