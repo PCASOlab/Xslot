@@ -1,4 +1,4 @@
-# Implementation of Future/neXt Slot (Xslot) Prediction for Unsupervised Object Discovery in Surgical Video
+# Implementation of Future/neXt Slot (Xslot) Prediction for Unsupervised Object Discovery in Surgical Video - MICCAI2025
 
 
 
@@ -29,7 +29,7 @@ A slot decoder then recurrently maps each merged slot back to the video encoding
 
 ## Repository Structure
 
-- `MLP_ds_simmerger_predict.py` — Main script for training and prediction.
+- `main.py` — Main script for training and prediction.
 - `eval.py`, `eval_box.py`, `eval_slots.py` — Evaluation scripts for different tasks and metrics.
 - `display.py`, `visual.py` — Visualization utilities (Visdom integration).
 - `model/` — Model architectures, including slot attention and transformer modules.

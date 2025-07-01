@@ -5,9 +5,7 @@ from torch.autograd import Variable
 # from model import CE_build3  # the mmodel
 from time import time
 import os
-# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai+thoracic'  # Change this to your target mode
-# os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai+cholec'  # Change this to your target mode
-
+ 
 
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'train_miccai'  # Change this to your target mode
 # os.environ['WORKING_DIR_IMPORT_MODE'] = 'eval_endovis'  # Change this to your target mode
@@ -133,97 +131,26 @@ if Visdom_flag == True:
     from visual import VisdomLinePlotter
 
     plotter = VisdomLinePlotter(env_name='path finding training Plots')
-
-def is_external_drive(drive_path):
-    # Check if the drive is a removable drive (usually external)
-    return os.path.ismount(drive_path) and shutil.disk_usage(drive_path).total > 0
-
-def find_external_drives():
-    # List all drives on the system
-    drives = [d for d in os.listdir('/') if os.path.isdir(os.path.join('/', d))]
-
-    # Filter out external drives and exclude certain paths
-    external_drives = [drive for drive in drives if is_external_drive(os.path.join('/', drive))
-                       and not drive.startswith(('media', 'run', 'dev'))]
-
-    return external_drives
-def remove_module_prefix(state_dict):
-    new_state_dict = {}
-    for key, value in state_dict.items():
-        if key.startswith('module.'):
-            new_key = key[7:]  # Remove the 'module.' prefix
-        else:
-            new_key = key
-        new_state_dict[new_key] = value
-    return new_state_dict
-def add_module_prefix(state_dict):
-    new_state_dict = {}
-    for key, value in state_dict.items():
-        new_key = 'module.' + key
-        new_state_dict[new_key] = value
-    return new_state_dict
-# weight init
-def weights_init(m):
-    classname = m.__class__.__name__
-    if classname.find('Conv') != -1:
-        m.weight.data.normal_(0.0, 0.02)
-    elif classname.find('BatchNorm') != -1:
-        m.weight.data.normal_(1.0, 0.02)
-        m.bias.data.fill_(0)
-     
-############ for the linux to find the extenral drive
-external_drives = find_external_drives()
-
-if external_drives:
-    print("External drives found:")
-    for drive in external_drives:
-        print(drive)
-else:
-    print("No external drives found.")
-############ for the linux to find the extenral drive
-# Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(),GPU_mode,num_gpus,Using_contrast=False,Using_SP_regu = False,Using_SP = False,Using_slot_bert=False,slot_ini= "rnn",gpu_selection=Gpu_selection,pooling="max",TPC=True)
-
+ 
+ 
+   
 Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(),GPU_mode,num_gpus,Using_contrast=False,Using_SP_regu = False,Using_SP = True,Using_slot_bert=True,slot_ini= "binder+merger",Sim_threshold=0.90,gpu_selection=Gpu_selection,pooling="max",TPC=True)
 device = Model_infer.device
-
-# if GPU_mode == True:
-#     if num_gpus > 1:
-#         Model_infer.VideoNets = torch.nn.DataParallel(Model_infer.VideoNets)
-#     Model_infer.VideoNets.to(device)
-
-# Model.cuda()
+ 
 dataLoader = myDataloader(img_size = img_size,Display_loading_video = False,Read_from_pkl= True,Save_pkl = False,Load_flow=Load_flow, Load_feature=Load_feature,Train_list='else',Device=device)
 
-if Continue_flag == False:
-    pass
-    # Model_infer.VideoNets.apply(weights_init)
-else:
-    # torch.save(Model_infer.model.initializer.state_dict(), Output_root + "initializer" + str(saver_id) + ".pth")
-    #     torch.save(Model_infer.model.encoder.state_dict(), Output_root + "encoder" + str(saver_id) + ".pth")
-    #     torch.save(Model_infer.model.processor.state_dict(), Output_root + "processor" + str(saver_id) + ".pth")
-    #     torch.save(Model_infer.model.decoder.state_dict(), Output_root + "decoder" + str(saver_id) + ".pth")
+if Continue_flag == True:
     Model_infer.model.load_state_dict(torch.load(Output_root + 'model' + loadmodel_index ))
-    
-    # Model_infer.model.initializer.load_state_dict(torch.load(Output_root + 'initializer' + loadmodel_index,map_location='cuda:0'))
-    # Model_infer.model.encoder.load_state_dict(torch.load(Output_root + 'encoder' + loadmodel_index,map_location='cuda:0' ))
-    # Model_infer.model.processor.load_state_dict(torch.load(Output_root + 'processor' + loadmodel_index,map_location='cuda:0' ))
-    # Model_infer.model.decoder.load_state_dict(torch.load(Output_root + 'decoder' + loadmodel_index,map_location='cuda:0' ))
-    # Model_infer.model.temporal_binder.load_state_dict(torch.load(Output_root + 'temporal_binder' + loadmodel_index,map_location='cuda:0' ))
-    # Model_infer.model.future_state_prdt.load_state_dict(torch.load(Output_root + 'future_state_prdt' + loadmodel_index,map_location='cuda:0' ))
-
-        # torch.save(Model_infer.model.temporal_binder.state_dict(), Output_root + "temporal_binder" + str(saver_id) + ".pth")
-
+  
 
 
 
  
 read_id = 0
-# print(Model_infer.resnet)
-# print(Model_infer.VideoNets)
+ 
 
 epoch = 0
-# transform = BaseTransform(  Resample_size,(104/256.0, 117/256.0, 123/256.0))
-# transform = BaseTransform(  Resample_size,[104])  #gray scale data
+ 
 iteration_num = 0
 #################
 #############training
@@ -299,25 +226,7 @@ while (1):
 
     if (read_id % 1000) == 0  :
         torch.save(Model_infer.model.state_dict(), Output_root + "model" + str(saver_id) + ".pth")
-        # torch.save(Model_infer.model.initializer.state_dict(), Output_root + "initializer" + str(saver_id) + ".pth")
-        # torch.save(Model_infer.model.encoder.state_dict(), Output_root + "encoder" + str(saver_id) + ".pth")
-        # torch.save(Model_infer.model.processor.state_dict(), Output_root + "processor" + str(saver_id) + ".pth")
-        # torch.save(Model_infer.model.decoder.state_dict(), Output_root + "decoder" + str(saver_id) + ".pth")
-        # torch.save(Model_infer.model.temporal_binder.state_dict(), Output_root + "temporal_binder" + str(saver_id) + ".pth")
-        # torch.save(Model_infer.model.future_state_prdt.state_dict(), Output_root + "future_state_prdt" + str(saver_id) + ".pth")
-
          
-
-
-
-
-
-        # self.model.initializer.parameters(),'lr': learningR},
-        # # {'params': self.model.encoder.parameters(),'lr': learningR},
-        # {'params': self.model.processor.parameters(),'lr': learningR},
-        # {'params': self.model.decoder.parameters(),'lr': learningR}
-        # torch.save(Model_infer.VideoNets_S.state_dict(), Output_root + "outNets_s" + str(saver_id) + ".pth")
-        # torch.save(Model_infer.resnet.state_dict(), Output_root + "outResNets" + str(saver_id) + ".pth")
 
         saver_id +=1
         if saver_id >1:
@@ -346,12 +255,7 @@ while (1):
             output_file = eval_slots.process_metrics_from_excel(Output_root + "/metrics_video.xlsx", Output_root)
 
             break
-    
-    # print(labels)
-
-    # pass
-
-
+     
 
 
 
