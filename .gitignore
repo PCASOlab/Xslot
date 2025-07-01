@@ -1,5 +1,5 @@
 # Ignore all files in any subfolder of model_checkpoint
-Model_checkpoint/Abdominal/model0.pth
-Model_checkpoint/Cholec/model0.pth
-?odel_checkpoint/Thoracic/model0.pth
+Model_checkpoint/Abdominal/*
+Model_checkpoint/Cholec/*
+?odel_checkpoint/Thoracic/*
 Data_samples/output/
