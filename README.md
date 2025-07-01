@@ -3,8 +3,8 @@
 
 
 <p align="center">
-  <!-- <video src="asset/Video 1 29 seconds.mp4" width="400" autoplay loop muted playsinline></video> -->
-  <video src="asset/Video 2 Multiple FPS.mp4" width="400" autoplay loop muted playsinline></video>
+  <img src="asset/Video1.gif" width="400" />
+  <img src="asset/Video2.gif" width="400" />
 </p>
 
 ![Method Overview](asset/method.jpg)
