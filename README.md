@@ -152,10 +152,10 @@ We thank the authors of the following projects for open-sourcing their code:
 If you use this codebase, please cite:
 
 ```
-@inproceedings{liao_future2025,
+@inproceedings{liao2025future,
   title={Future Slot Prediction for Unsupervised Object Discovery in Surgical Video},
   author={Guiqiu Liao, Matjaz Jogan, Marcel Hussing, Edward Zhang, Eric Eaton, Daniel A. Hashimoto},
-  booktitle={Medical Image Computing and Computer Assisted Intervention – MICCAI 2025},
+  booktitle={28th International Conference on Medical Image Computing and Computer Assisted Intervention – MICCAI 2025},
   year={2025}
 }
 ```
