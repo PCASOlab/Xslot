@@ -60,11 +60,7 @@ TENSORBOARD_SUBDIR = "tb"
 METRICS_SUBDIR = "metrics"
  
 DEFAULT_CONFIG = "model_config.yml"
-
-# DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3_MLP_cholec.yml"
-
-# DEFAULT_CONFIG = "video_SA/configs/videosaur/ytvis3.yml"
-
+ 
 
 DEFAULT_LOG_DIR = "./logs"
 
@@ -119,10 +115,7 @@ if GPU_mode ==True:
 
 else:
     device = torch.device("cpu")
-
-# dataroot = "../dataset/CostMatrix/"
-# torch.set_num_threads(8)
- # create the model
+ 
 def xslot_slot_att(pretrained=True, checkpoint_url=None, **kwargs):
     model = model_infer_slot_att._Model_infer(..., **kwargs)  # fill args accordingly
     if pretrained:
@@ -173,9 +166,9 @@ while (1):
     labels_GPU = torch.from_numpy(np.float32(labels))
     input_videos_GPU = input_videos_GPU.to (device)
     labels_GPU = labels_GPU.to (device)
-    input_flows = dataLoader.input_flows*1.0/ 255.0
-    input_flows_GPU = torch.from_numpy(np.float32(input_flows))  
-    input_flows_GPU = input_flows_GPU.to (device)
+    input_flows = dataLoader.input_flows*1.0/ 255.0 # not used by the model 
+    input_flows_GPU = torch.from_numpy(np.float32(input_flows))  # not used by the model 
+    input_flows_GPU = input_flows_GPU.to (device)# not used by the model 
     if Load_feature ==True:
         features = dataLoader.features.to (device)
     Model_infer.forward(input_videos_GPU,input_flows_GPU,features,Enable_student,epoch=epoch)
@@ -185,23 +178,8 @@ while (1):
     if Evaluation == False and Evaluation_slots==False:
         Model_infer.optimization(labels_GPU,Enable_student) 
 
-    if  Save_feature_OLG== True:
-        this_features= Model_infer.f[Batch_size-1].permute(1,0,2,3).half()
-        sam_pkl_file_name = dataLoader.this_file_name
-        sam_pkl_file_path = os.path.join(sam_feature_OLG_dir, sam_pkl_file_name)
-
-        with open(sam_pkl_file_path, 'wb') as file:
-            pickle.dump(this_features, file)
-            print("sam Pkl file created:" +sam_pkl_file_name)
-    if Save_sam_mask == True:
-         
-        this_mask= Model_infer.sam_mask.half()
-        mask_pkl_file_name = dataLoader.this_file_name
-        mask_pkl_file_path = os.path.join(output_folder_sam_masks, mask_pkl_file_name)
-
-        with open(mask_pkl_file_path, 'wb') as file:
-            pickle.dump(this_mask, file)
-            print("sam Pkl file created:" +mask_pkl_file_name)
+     
+     
 
 
     if Display_flag == True and read_id%Display_down_sample == 0:
