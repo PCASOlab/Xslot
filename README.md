@@ -30,11 +30,8 @@ A slot decoder then recurrently maps each merged slot back to the video encoding
 ## Repository Structure
 
 - `main.py` — Main script for training and prediction.
-- `eval.py`, `eval_box.py`, `eval_slots.py` — Evaluation scripts for different tasks and metrics.
-- `display.py`, `visual.py` — Visualization utilities (Visdom integration).
 - `model/` — Model architectures, including slot attention and transformer modules.
 - `dataset/` — Data loading, preprocessing, and augmentation utilities.
-- `data_pre_curation/` — Scripts for preparing and curating datasets.
 - `working_para/` — Parameter and configuration files for different experiments and environments.
 - `working_dir_root.py` — Central configuration and dynamic import logic.
 
@@ -52,7 +49,6 @@ A slot decoder then recurrently maps each merged slot back to the video encoding
      ```bash
      pip install torch torchvision pytorch-lightning numpy visdom pandas scikit-learn opencv-python
      ```
-   - For advanced usage, see `video_SA/pyproject.toml` for additional dependencies.
 
 3. **(Optional) Install and run Visdom for visualization:**
    ```bash
