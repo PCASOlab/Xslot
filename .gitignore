@@ -9,3 +9,10 @@ Model_checkpoint/Thoracic/model0.pth
 Model_checkpoint/Thoracic/model1.pth
 
 Data_samples/output/
+
+xxslot/
+
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class

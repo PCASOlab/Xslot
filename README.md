@@ -45,9 +45,24 @@ A slot decoder then recurrently maps each merged slot back to the video encoding
 
 2. **Install dependencies:**
    - This project uses PyTorch, torchvision, pytorch-lightning, numpy, visdom, and other scientific libraries.
-   - You can install dependencies using pip:
+   - **Recommended:** Install most dependencies from the requirements file:
      ```bash
-     pip install torch torchvision pytorch-lightning numpy visdom pandas scikit-learn opencv-python
+     pip install -r requirements.txt
+     ```
+   - **For pydensecrf (optional but recommended):** This package may require additional steps:
+     ```bash
+     # Install system dependencies (Ubuntu/Debian)
+     sudo apt-get install build-essential python3-dev
+     
+     # Install Cython first (already included in requirements.txt)
+     pip install Cython
+     
+     # Then install pydensecrf
+     pip install git+https://github.com/lucasb-eyer/pydensecrf.git
+     ```
+   - **Alternative manual installation:**
+     ```bash
+     pip install torch torchvision pytorch-lightning numpy visdom pandas scikit-learn scikit-image opencv-python
      ```
 
 3. **(Optional) Install and run Visdom for visualization:**

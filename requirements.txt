@@ -1,0 +1,15 @@
+torch
+torchvision
+pytorch-lightning
+numpy
+visdom
+pandas
+scikit-learn
+scikit-image
+opencv-python
+omegaconf
+einops
+timm
+webdataset
+Cython
+# pydensecrf - install separately if needed (see README for instructions)
