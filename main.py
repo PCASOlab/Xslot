@@ -138,7 +138,7 @@ Model_infer = model_infer_slot_att._Model_infer(parser.parse_args(),GPU_mode,num
 device = Model_infer.device
  
 dataLoader = myDataloader(img_size = img_size,Display_loading_video = False,Read_from_pkl= True,Save_pkl = False,Load_flow=Load_flow, Load_feature=Load_feature,Train_list='else',Device=device)
-
+# loadmodel_index ='1.pth'
 if Continue_flag == True:
     Model_infer.model.load_state_dict(torch.load(CHECKPOINT_SUBDIR + 'model' + loadmodel_index ))
    

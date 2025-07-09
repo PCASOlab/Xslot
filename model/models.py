@@ -338,7 +338,7 @@ class ObjectCentricModel(pl.LightningModule):
             # slotst,slots = self.temporal_binder (slots)
             if (epoch%2)==0 or Evaluation_slots==True: # allow slots to be none bert reconstruction
                 slots = temporal_slots_slide.apply_sliding_window_avg( self.temporal_binder,slots )
-                print("applying sbert")
+                # print("applying sbert")
 
         if (self.presence_nn is not None) and self.Using_SP == True:
             presence_outs=self.presence_nn(slots)

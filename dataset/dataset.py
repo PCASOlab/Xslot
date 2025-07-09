@@ -640,7 +640,7 @@ class myDataloader(object):
                             self.video_buff = this_video_buff 
                             if clip_name in self.all_labels:
                                 this_label = self.all_labels[clip_name]
-                                print(this_label)
+                                # print(this_label)
                                 self.this_label_string. append (this_label)
                                 binary_vector = np.array([1 if category in this_label else 0 for category in categories], dtype=int)
                                 # seperate the binary vector as left and right channel, so that when the image is fliped, two vector will exchange

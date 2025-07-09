@@ -54,11 +54,11 @@ class Display(object):
         if type(MODEL_infer.final_output) is list and MODEL_infer.final_output is not None:
             self.Model_infer.output= MODEL_infer.final_output[0]
 
-            print("It's a list!")
+            # print("It's a list!")
         else:
             self.Model_infer.output= MODEL_infer.final_output
 
-            print("It's not a list.")
+            # print("It's not a list.")
         # self.Model_infer.slice_valid = MODEL_infer.slice_valid
         self.Model_infer.cam3D = MODEL_infer.cam3D
         self.Model_infer.raw_cam = MODEL_infer.raw_cam
@@ -111,11 +111,7 @@ class Display(object):
             # (read_id, Output_root, label_mask, predic_mask_3D, output_video_label):
             self.result_corr=eval_slots.cal_all_metrics_slots(read_id,Output_root,label_mask,self.Model_infer.cam3D[0],self.dataLoader.input_videos[bz-1])
 
-        if hasattr(MODEL_infer, 'sam_mask'):
-            self.Model_infer. sam_mask =  MODEL_infer.sam_mask
-             
-        else:
-            print("Parameter sam mask does not exist or is NaN")
+        
         if Load_flow == True:
             Gray_video = self.dataLoader.input_flows[0,:,:,:] # RGB together
             Ori_D,Ori_H,Ori_W = Gray_video.shape
