@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xslot: Future/Next Slot Prediction for Unsupervised Object Discovery in Surgical Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #24292f;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 2em 2.5em;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+      margin-top: 1.2em;
+      margin-bottom: 0.6em;
+    }
+    .features-list, .repo-structure, .pretrained, .datasets, .acknowledgement {
+      list-style: disc;
+      margin-left: 1.5em;
+    }
+    code, pre {
+      background: #ececec;
+      border-radius: 4px;
+      padding: 0.2em 0.5em;
+      font-size: 1em;
+      color: #333;
+    }
+    .section {
+      margin-bottom: 2em;
+    }
+    .img-center {
+      display: flex;
+      justify-content: center;
+      margin: 1.2em 0;
+    }
+    .img-center img {
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+      max-width: 100%;
+      height: auto;
+    }
+    .download-links a {
+      display: inline-block;
+      margin-right: 1em;
+      color: #0073e6;
+      text-decoration: none;
+    }
+    .download-links a:hover {
+      text-decoration: underline;
+    }
+    .citation-box {
+      background: #f4f7fa;
+      padding: 1em;
+      border-radius: 6px;
+      font-size: 0.95em;
+      margin-top: 1em;
+      font-family: 'Consolas', monospace;
+      color: #444;
+      overflow-x: auto;
+    }
+    @media(max-width: 700px) {
+      .container { padding: 1em 0.5em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Xslot: Future/Next Slot Prediction for Unsupervised Object Discovery in Surgical Video</h1>
+    <div class="img-center">
+      <img src="asset/Video1.gif" alt="Project Demo Animation" width="800">
+    </div>
+    <p>
+      This project provides the official implementation for <strong>Future Slot Prediction for Unsupervised Object Discovery in Surgical Video</strong>
+      (<a href="https://arxiv.org/pdf/2507.01882" target="_blank">Paper</a>). The method enables unsupervised, object-centric learning and future prediction in complex surgical environments.
+    </p>
+
+    <div class="section">
+      <h2>Features</h2>
+      <ul class="features-list">
+        <li><strong>Unsupervised Object Discovery:</strong> Identify and track objects in surgical videos without manual annotations.</li>
+        <li><strong>Slot Attention & Prediction:</strong> Object-centric representations and future state prediction using slot-based neural architectures.</li>
+        <li><strong>Dataset Handling:</strong> Supports multiple surgical datasets (Cholec, Thoracic, MICCAI, Endovis, etc.) with flexible configuration.</li>
+        <li><strong>Model Loading & Visualization:</strong> Tools for visualization and loading pre-trained models for unsupervised transfer-learning.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Method Overview</h2>
+      <p>
+        The Xslot method processes surgical videos of arbitrary length, operating on a buffered latent embedding. Slot attention encodes object-centric features, and a transformer aggregates and merges these slots, handling dynamic scene changes (new objects, removed objects). A slot decoder maps merged slots back to the video encoding space, reconstructing features and object segmentation masks.
+      </p>
+      <div class="img-center">
+        <img src="asset/method.jpg" alt="Method Overview Diagram">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Repository Structure</h2>
+      <ul class="repo-structure">
+        <li><code>main.py</code> — Main script for training and prediction</li>
+        <li><code>model/</code> — Model architectures (slot attention, transformer, etc.)</li>
+        <li><code>dataset/</code> — Data loading, preprocessing, augmentation</li>
+        <li><code>working_para/</code> — Experiment configuration files</li>
+        <li><code>working_dir_root.py</code> — Central configuration and dynamic import logic</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Installation</h2>
+      <ol>
+        <li>
+          <strong>Clone the repository:</strong>
+          <pre>git clone https://github.com/PCASOlab/Xslot
+cd Xslot</pre>
+        </li>
+        <li>
+          <strong>Install dependencies:</strong>
+          <pre>pip install -r requirements.txt</pre>
+          <small>For <code>pydensecrf</code> and system dependencies, see README for details.</small>
+        </li>
+        <li>
+          <strong>(Optional) Visualization:</strong>
+          <pre>pip install visdom
+python -m visdom.server</pre>
+        </li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>Usage</h2>
+      <ul>
+        <li><strong>Training and Evaluation:</strong>
+          <pre>python main.py</pre>
+        </li>
+        <li><strong>Visualization:</strong> Visual outputs available via Visdom at <a href="http://localhost:8097" target="_blank">localhost:8097</a></li>
+        <li><strong>Configuration:</strong> Edit files in <code>working_para/</code> to set paths, dataset splits, and experiment parameters.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Pretrained Models</h2>
+      <p>Download pretrained weights and place them in <code>Model_checkpoint/</code> folder:</p>
+      <ul class="pretrained download-links">
+        <li><a href="https://upenn.box.com/s/z3zihy27b6vufkkncmezj1aul5jh86k1" target="_blank">Abdominal model</a></li>
+        <li><a href="https://upenn.box.com/s/secy6f7j0q1u50ccejxf6pu5w8kf3o7y" target="_blank">Thoracic model</a></li>
+        <li><a href="https://upenn.box.com/s/q8pt5ge89lhmxj7odift29vscqzwivys" target="_blank">Cholec model</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Datasets</h2>
+      <p>
+        Supports training and demo with <code>Data_samples/</code> (sample data). Full curated datasets:
+      </p>
+      <ul class="datasets download-links">
+        <li><a href="https://upenn.box.com/s/493licnenrssjukuvok5zkvc5cqmx1nh" target="_blank">Abdominal dataset</a></li>
+        <li><a href="https://upenn.box.com/s/rxqoi81j5ar4l343ob6otdxxeusc3iwg" target="_blank">Thoracic dataset</a></li>
+        <li><a href="https://upenn.box.com/s/ree79lv9fbibjbs2b8mkwzz207oqu6jj" target="_blank">Cholec dataset</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Scene Decomposition</h2>
+      <p>
+        The method optimally decomposes surgical scenes with fast inference, preventing over- or under-grouping. Robust to dynamic and cluttered environments.
+      </p>
+      <div class="img-center">
+        <img src="asset/segmentation.png" alt="Scene Decomposition Output" width="700">
+      </div>
+      <div class="img-center">
+        <img src="asset/Video2.gif" alt="Segmentation Demo" width="600">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Acknowledgement</h2>
+      <ul class="acknowledgement">
+        <li><a href="https://github.com/martius-lab/videosaur" target="_blank">VideoSAUR</a></li>
+        <li><a href="https://github.com/facebookresearch/dinosaure" target="_blank">DINOSAUR</a></li>
+        <li><a href="https://github.com/google-research/slot-attention-video" target="_blank">SAVi</a></li>
+        <li><a href="https://github.com/nv-tlabs/STEVE" target="_blank">STEVE</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Citation</h2>
+      <div class="citation-box">
+@inproceedings{liao2025future,
+  title={Future Slot Prediction for Unsupervised Object Discovery in Surgical Video},
+  author={Guiqiu Liao, Matjaz Jogan, Marcel Hussing, Edward Zhang, Eric Eaton, Daniel A. Hashimoto},
+  booktitle={28th International Conference on Medical Image Computing and Computer Assisted Intervention – MICCAI 2025},
+  year={2025}
+}
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>License</h2>
+      <p>This project is for academic research purposes only.</p>
+    </div>
+  </div>
+</body>
+</html>
