@@ -164,10 +164,12 @@ If you use this codebase, please cite:
 
 ```
 @inproceedings{liao2025future,
-  title={Future Slot Prediction for Unsupervised Object Discovery in Surgical Video},
-  author={Guiqiu Liao, Matjaz Jogan, Marcel Hussing, Edward Zhang, Eric Eaton, Daniel A. Hashimoto},
-  booktitle={28th International Conference on Medical Image Computing and Computer Assisted Intervention – MICCAI 2025},
-  year={2025}
+  title={Future slot prediction for unsupervised object discovery in surgical video},
+  author={Liao, Guiqiu and Jogan, Matjaz and Hussing, Marcel and Zhang, Edward and Eaton, Eric and Hashimoto, Daniel A},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={219--229},
+  year={2025},
+  organization={Springer}
 }
 ```
 
