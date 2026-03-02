@@ -96,7 +96,7 @@ Download the following model and place them within the [`Model_checkpoint`](./Mo
 
 Support these 3 dataset, the demo is able to train with sampled data (within folder [`Data_samples`](./Data_samples)), the full curated data is available thourgh the following links:
 - **Abdominal dataset:** [Download](https://upenn.box.com/s/493licnenrssjukuvok5zkvc5cqmx1nh)
-- **Thoracic dataset:** [Download](https://upenn.box.com/s/rxqoi81j5ar4l343ob6otdxxeusc3iwg)
+- **Thoracic dataset:** [Please fill in this data request form](https://upenn.co1.qualtrics.com/jfe/form/SV_ewBhqo82j65YXtQ)
 - **Cholec dataset:** [Download](https://upenn.box.com/s/ree79lv9fbibjbs2b8mkwzz207oqu6jj)
 
 
